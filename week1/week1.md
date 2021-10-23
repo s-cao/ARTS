@@ -43,6 +43,24 @@ https://leetcode.com/problems/reverse-linked-list-ii/
         head.next = cur.next
         cur.next = prev
         return cur
+# Day 3 - Oct 22, 2021
+## Algorithm
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
+    class Solution:
+        def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+            pt1, pt2 = head, head
+            while(n):
+                pt1 = pt1.next
+                n = n-1
+            while(pt1 and pt1.next):
+                pt1 = pt1.next
+                pt2 = pt2.next
+            if (pt1 is None):
+                return pt2.next
+            elif (pt2.next):
+                pt2.next = pt2.next.next
+            return head
 
 ## Review
 
